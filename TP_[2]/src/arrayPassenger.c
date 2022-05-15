@@ -16,8 +16,7 @@ int menu()
 {
     int option;
     system("cls");
-    printf("\t\t*** ABM PASAJEROS ***\n");
-    printf("-------------------------\n");
+    printf("\n\t\t*** ABM PASAJEROS ***\n");
     printf("  1- ALTA.\n");
     printf("  2- BAJA.\n");
     printf("  3- MODIFICAR.\n");
@@ -251,7 +250,7 @@ int removePassenger(Passenger* list, int len)
 
 void showPassenger(Passenger unaPersona)
 {
-    printf("\t %d \t %s \t %s \t %.2f \t %s \t %d \t %d \n",
+    printf("%d  %10s  %16s  %12.2f  %23s  %23d  %21d \n",
            unaPersona.id,    //INT
            unaPersona.name,  //CHAR
            unaPersona.lastName, //CHAR
@@ -259,7 +258,9 @@ void showPassenger(Passenger unaPersona)
            unaPersona.flycode, //CHAR
            unaPersona.typePassenger, //INT
            unaPersona.statusFlight); //INT
+    printf("******************************************************************************************************************************\n");
 }
+
 
 int showPassengers(Passenger* list, int len)
 {
@@ -269,8 +270,8 @@ int showPassengers(Passenger* list, int len)
     {
         system("cls");
         printf("\t *** LISTADO DE PERSONAS ***\n");
-        printf("ID \t NOMBRE \t APELLIDO \t PRECIO \t CÓDIGO DE VUELO \t TIPO DE PASAJERO \t ESTADO DE VUELO");
-        printf("-----------------------------------------------------------------------------\n");
+        printf("ID \t NOMBRE \t APELLIDO \t PRECIO \t CÓDIGO DE VUELO \t TIPO DE PASAJERO \t ESTADO DE VUELO\n");
+        printf("******************************************************************************************************************************\n");
         for(int i = 0; i < len; i++)
         {
             if(!list[i].isEmpty) // esta estructura está vacía? no, entonces muestro// es igual a 0 // 1 negado
